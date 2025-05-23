@@ -6,15 +6,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: villa
+      app: villa-website
   template:
     metadata:
       labels:
-        app: villa
+        app: villa-website
     spec:
       containers:
-      - name: villa
-        image: <your-dockerhub-username>/villa-website:latest
+      - name: villa-website
+        image: <your-dockerhub-username>/villa-website
         ports:
         - containerPort: 80
 ---
@@ -25,7 +25,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: villa
+    app: villa-website
   ports:
     - protocol: TCP
       port: 80
