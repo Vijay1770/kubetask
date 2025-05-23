@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: villa-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: villa
+  template:
+    metadata:
+      labels:
+        app: villa
+    spec:
+      containers:
+      - name: villa
+        image: <your-dockerhub-username>/villa-website:latest
+        ports:
+        - containerPort: 80
