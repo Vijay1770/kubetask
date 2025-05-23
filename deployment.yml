@@ -17,3 +17,16 @@ spec:
         image: <your-dockerhub-username>/villa-website:latest
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: villa-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: villa
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
