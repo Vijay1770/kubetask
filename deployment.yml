@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubepro-deployment
+  name: villa-website:latest-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: kubepro
+      app: villa-website:latest
   template:
     metadata:
       labels:
-        app: kubepro
+        app: villa-website:latest
     spec:
       containers:
-        - name: kubepro
+        - name: villa-website:latest
           image: vijay1770/villa-website
           ports:
             - containerPort: 80
